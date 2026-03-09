@@ -2223,143 +2223,296 @@
     </ul>
   </div>
 
-  <div class="dr-section-label">Risk Prioritization Framework</div>
-  <p>Risks scored on Exposure Magnitude × Likelihood × Mitigation Difficulty (max 125). Prioritize in rank order entering negotiations.</p>
+  
+  <div class="dr-section-label">1 — Executive Summary and Priorities</div>
+  <p>The provisions below represent the cross&#8209;contract risks that most affect financial exposure, operational continuity, and exit flexibility. Priorities reflect combined severity, likelihood, and mitigation difficulty.</p>
+  <ul>
+    <li><strong>Liability cap and damage waivers (High):</strong> Salesforce caps aggregate liability to fees paid in the prior 12 months and excludes lost profits/indirect damages; free/beta services have near&#8209;zero recourse. This sharply limits recovery for outages, data issues, or migration harms and justifies cap uplift and carve&#8209;outs.</li>
+    <li><strong>Non&#8209;cancelable fees, auto&#8209;renewal, and early&#8209;termination payments (High):</strong> Salesforce fees are non&#8209;cancelable/non&#8209;refundable; subscriptions auto&#8209;renew absent timely notice; EU Data Act switching/deletion can still require paying the fee remainder. Financial exposure persists even if value erodes mid&#8209;term.</li>
+    <li><strong>Data exit and vendor non&#8209;liability (High):</strong> Salesforce offers only a short export window (30 days) post&#8209;termination and disclaims liability for switching/deletion processes while pushing indemnities to the customer. Risk concentrates around continuity, integrity, and third&#8209;party claims.</li>
+    <li><strong>Operational/billing fragility under Microsoft MCA (High):</strong> Wire&#8209;transfer defaults, card thresholds, role&#8209;scoped invoice/notice delivery, and processing delays can trigger late fees/suspensions. EA&#8209;to&#8209;MCA transitions alter billing scopes/APIs/reporting and can obscure historical spend unless pre&#8209;planned.</li>
+    <li><strong>Indemnity asymmetry (Medium&#8209;High):</strong> Salesforce provides IP indemnity with carve&#8209;outs and reserves termination/refund as its remedy; the customer indemnifies for configurations, data, and non&#8209;Salesforce apps&#8212;broadly shifting third&#8209;party claim risk to the customer.</li>
+    <li><strong>SLA and performance remedies (Medium):</strong> Core Salesforce MSA commits only to &#8220;commercially reasonable efforts&#8221; and pushes credits/metrics to separate documents or negotiations; Microsoft MCA docs focus on billing, not SLA relief. Absent negotiated SLAs, outages primarily yield minimal or no economic remedy.</li>
+    <li><strong>Change control and notice mechanics (Medium):</strong> Salesforce allows email notice for many matters and can change interoperability with non&#8209;SFDC apps; Microsoft invoice/statement distribution depends on exact billing/AP contact configuration, making notice failure a realistic scenario.</li>
+  </ul>
+
+  <div class="dr-section-label">2 — Methodology</div>
+  <p>We reviewed: Microsoft Customer Agreement operational/billing documentation, Salesforce Main Services Agreement, Microsoft and Salesforce 10&#8209;Ks, and 2024 Most&#8209;Negotiated&#8209;Terms insights. We mapped findings to eight risk categories:</p>
+  <ul>
+    <li>Liability &amp; Indemnification</li>
+    <li>Pricing &amp; Payment</li>
+    <li>Termination &amp; Exit</li>
+    <li>Service Levels &amp; Performance</li>
+    <li>Data Privacy &amp; Security</li>
+    <li>Regulatory &amp; Compliance</li>
+    <li>Change Management &amp; Amendments</li>
+    <li>Operational Execution &amp; Transition</li>
+  </ul>
+  <p>Prioritization weighs exposure magnitude, likelihood, and ease of mitigation, with added consideration for vendor/customer power asymmetry and reputational impact.</p>
+  <p><strong>Key principles included:</strong></p>
+  <ul>
+    <li>prefer explicit contract text</li>
+    <li>use 10&#8209;K risk factor context to adjust likelihood/consequence</li>
+    <li>benchmark against 2024 market norms for leverage and fallback language</li>
+    <li>translate each risk into concrete negotiation actions (cap carve&#8209;outs, notice buffers, SLA credits, assisted migration, etc.)</li>
+  </ul>
+
+  <div class="dr-section-label">3 — Risk Categories and Definitions</div>
+  <ul>
+    <li><strong>Liability &amp; Indemnification:</strong> Allocation of monetary exposure and third&#8209;party claim defense/settlement; focus on caps, exclusions, carve&#8209;outs, and asymmetric duties.</li>
+    <li><strong>Pricing &amp; Payment Terms:</strong> Fee structure, non&#8209;refundability, rate changes, late charges, and invoicing/payment mechanics that drive cash&#8209;flow and budget risk.</li>
+    <li><strong>Termination &amp; Exit Rights:</strong> Convenience/cause termination, non&#8209;renewal windows, early&#8209;termination fees, transition assistance, and data&#8209;return/deletion timelines.</li>
+    <li><strong>Service Levels &amp; Performance Guarantees:</strong> Availability/response targets, monitoring/reporting, credits, chronic failure remedies, and service modification rights.</li>
+    <li><strong>Data Privacy &amp; Security:</strong> Protection of customer data, DPA incorporation, breach duties, cross&#8209;border transfers, and residual risks around free/beta services.</li>
+    <li><strong>Regulatory &amp; Compliance:</strong> Export, anti&#8209;corruption, sanctions, and new frameworks (e.g., EU Data Act) that impose process/notice duties or shift liability.</li>
+    <li><strong>Change Management &amp; Amendments:</strong> Vendor rights to modify features/interoperability/docs; order of precedence and unilateral change mechanisms.</li>
+    <li><strong>Operational Execution &amp; Transition:</strong> Practical risks in onboarding, role assignments, billing scopes, API/reporting shifts, and notice routing that affect continuity.</li>
+  </ul>
+
+  <div class="dr-section-label">4 — Detailed Contract-Specific Risk Analysis</div>
+  <p><strong>Microsoft Customer Agreement (MCA) &#8212; Operational/Billing Terms</strong></p>
+  <p><em>Context: The available MCA documentation centers on billing roles, payment methods, invoicing, and transitions rather than core liability/indemnity. Where the contract text is silent in provided materials, we flag analysis gaps and focus on documented operational risks.</em></p>
+
+  <p><strong>Liability &amp; Indemnification</strong></p>
+  <ul>
+    <li><strong>Unclear liability framework in provided MCA materials:</strong> The MCA billing guidance doesn&#8217;t articulate caps or exclusions; absent explicit terms, you lack certainty on financial recovery for billing/operational failures. Mitigation: request cross&#8209;reference to governing terms (e.g., Product/Universal Terms) and add a liability clause specific to billing/transition harms with carve&#8209;outs for data loss, gross negligence, willful misconduct, IP, and privacy violations.</li>
+    <li><strong>Free trial/beta coverage visibility:</strong> MCA docs in scope do not address free/beta risk allocation. Mitigation: incorporate an exhibit mirroring your enterprise DPA/indemnity carve&#8209;outs for evaluation periods and require at least limited credits or assisted remediation for test data incidents.</li>
+  </ul>
+
+  <p><strong>Pricing &amp; Payment Terms</strong></p>
+  <ul>
+    <li><strong>Wire&#8209;transfer default and card limits:</strong> Accounts signed via a Microsoft representative default to wire transfer; one&#8209;time card payments are limited (e.g., 50,000 USD threshold), increasing processing time and late&#8209;payment risk. Add notice and grace&#8209;period buffers and permit ACH/card above threshold upon approval to avoid cascading late fees or suspension. <span class="dr-cite">(learn.microsoft.com)</span></li>
+    <li><strong>Irreversibility of switching to wire default for recurring billing:</strong> After switching to wire as default, reverting to card recurring billing isn&#8217;t allowed; only manual card payments are permitted. This can strain AP processes and extend float. Mitigation: preserve card fallback in the agreement for emergency payments and require Microsoft to accept ACH as equivalent. <span class="dr-cite">(learn.microsoft.com)</span></li>
+    <li><strong>Role&#8209;dependent invoice/statement delivery:</strong> Invoice emails, statements, and payment reminders route only to specific roles and AP contacts. Misconfiguration can cause missed notices and late fees. Mandate vendor&#8209;copied notices to a designated distribution list and a cure period before suspension. <span class="dr-cite">(learn.microsoft.com)</span></li>
+    <li><strong>Processing times for wires and partial&#8209;payment constraints:</strong> Wire posting can take up to several business days; partial payments have minimums and don&#8217;t stop service suspension unless the invoice is fully paid. Negotiate a no&#8209;suspension buffer tied to bank proof of payment. <span class="dr-cite">(learn.microsoft.com)</span></li>
+  </ul>
+
+  <p><strong>Termination &amp; Exit Rights</strong></p>
+  <ul>
+    <li><strong>Cancellation mechanics not in provided MCA docs:</strong> The materials don&#8217;t define termination&#8209;for&#8209;convenience or mid&#8209;term downsize rights for seat/usage commitments under MCA/NCE. Mitigation: align purchase terms with monthly/annual flexibility, explicit downsizing windows, and fee relief on vendor&#8209;caused impairment.</li>
+  </ul>
+
+  <p><strong>Service Levels &amp; Performance Guarantees</strong></p>
+  <ul>
+    <li><strong>No SLA/credit constructs in the billing docs:</strong> Without explicit SLAs tied to billing failures (e.g., portal outages delaying payments/credits), you bear downtime/lateness risk. Mitigation: add a billing&#8209;operations SLA (invoice availability, statement cadence, support response) with fee&#8209;credit remedies.</li>
+  </ul>
+
+  <p><strong>Data Privacy &amp; Security</strong></p>
+  <ul>
+    <li><strong>Role elevation and guest access risk:</strong> Billing roles can be broadly assigned, and elevated directory roles can self&#8209;grant billing roles, creating potential separation&#8209;of&#8209;duties gaps. Require least&#8209;privilege RBAC, dual&#8209;control for role grants, and quarterly access reviews in the agreement. <span class="dr-cite">(learn.microsoft.com)</span></li>
+  </ul>
+
+  <p><strong>Regulatory &amp; Compliance</strong></p>
+  <ul>
+    <li><strong>Tax/payment localization risks:</strong> Changes in billing entities, currencies, and tax IDs affect compliance and timing of remittances; ensure Microsoft cooperates with tax documentation and acknowledges customer tax positions in writing.</li>
+  </ul>
+
+  <p><strong>Change Management &amp; Amendments</strong></p>
+  <ul>
+    <li><strong>Scope movement from EA to MCA without uniform parity:</strong> Pricing constructs, APIs, and scopes change under MCA; require notice, transition runbooks, and no&#8209;negative&#8209;change commitments for in&#8209;flight reporting until parity is validated. <span class="dr-cite">(learn.microsoft.com)</span></li>
+  </ul>
+
+  <p><strong>Operational Execution &amp; Transition</strong></p>
+  <ul>
+    <li><strong>&#8220;Billing&#8209;only&#8221; transfers and data/reporting loss:</strong> EA&#8209;to&#8209;MCA transfers move billing ownership only; resources stay put, but historical cost/usage may become inaccessible at prior scopes, and marketplace/savings&#8209;plan behaviors can change. Mitigation: export all reports, lock a cutover calendar, and require Microsoft assisted migration and continuity warranties. <span class="dr-cite">(learn.microsoft.com)</span></li>
+    <li><strong>API and reporting rework:</strong> EA consumption/price&#8209;sheet endpoints are replaced or behave differently under MCA; property names, scope hierarchy, and async patterns change, implying engineering rework. Require transition support, sandbox access, and vendor&#8209;maintained mapping guides. <span class="dr-cite">(learn.microsoft.com)</span></li>
+  </ul>
+
+  <p><strong>Salesforce Main Services Agreement (MSA) &#8212; Core Commercial/Legal Terms</strong></p>
+  <p><em>References below cite the Salesforce Global MSA dated September 15, 2025.</em></p>
+
+  <p><strong>Liability &amp; Indemnification</strong></p>
+  <ul>
+    <li><strong>Aggregate liability cap to fees in prior 12 months; broad damage waivers:</strong> MSA caps each party&#8217;s aggregate liability to total amounts paid for the services in the 12 months preceding the first incident and excludes lost profits/indirect damages, with limited exceptions. Seek cap uplift (e.g., 2x&#8209;3x annual fees), super&#8209;cap buckets, and carve&#8209;outs. <span class="dr-cite">(salesforce.com)</span></li>
+    <li><strong>Asymmetric indemnities with limited vendor remedies:</strong> Salesforce defends IP claims but can choose to modify, license, or terminate with a pro&#8209;rata refund; the customer indemnifies SFDC for Non&#8209;SFDC apps, unlawful use, and data claims&#8212;expanding your inbound exposure. Narrow customer indemnities and add vendor indemnity for data protection violations. <span class="dr-cite">(salesforce.com)</span></li>
+    <li><strong>Free trial/beta/free services &#8220;as&#8209;is&#8221; and indemnity disclaimed; de minimis cap:</strong> Free/beta carry no warranties/indemnities and impose a low ceiling (e.g., 1,000 USD) even where allowed by law. If your teams test with production&#8209;like data, require sandbox safeguards or exclude production data from &#8220;free/beta&#8221; scope. <span class="dr-cite">(salesforce.com)</span></li>
+  </ul>
+
+  <p><strong>Pricing &amp; Payment Terms</strong></p>
+  <ul>
+    <li><strong>Non&#8209;cancelable, non&#8209;refundable fees; no mid&#8209;term quantity decreases:</strong> Fees are due per order, non&#8209;cancelable/non&#8209;refundable; quantities can&#8217;t be decreased during a term, concentrating budget risk if usage declines. Add flexible downsizing rights at anniversaries and for documented business changes. <span class="dr-cite">(salesforce.com)</span></li>
+    <li><strong>Overdue charges, acceleration, and suspension:</strong> 1.5% monthly late interest, renewal conditioning, acceleration, and suspension after short cure windows raise disruption risk; negotiate tiered cures and &#8220;no suspension&#8221; for good&#8209;faith disputes. <span class="dr-cite">(salesforce.com)</span></li>
+    <li><strong>Auto&#8209;renewal and re&#8209;pricing risk:</strong> Subscriptions auto&#8209;renew unless 30&#8209;day notice is sent; decreases at renewal reset per&#8209;unit pricing to list, raising TCO. Extend notice to 90&#8209;120 days and cap renewal uplifts. <span class="dr-cite">(salesforce.com)</span></li>
+  </ul>
+
+  <p><strong>Termination &amp; Exit Rights</strong></p>
+  <ul>
+    <li><strong>Termination for cause only; refund/payment asymmetry:</strong> Customer gets refund only if customer terminates for cause; if SFDC terminates for cause, customer pays remaining fees; convenience exit is absent. Add termination for chronic SLA failure and material security incidents with fee relief. <span class="dr-cite">(salesforce.com)</span></li>
+    <li><strong>Data portability/deletion windows are short:</strong> Only 30 days post&#8209;termination to export data; thereafter SFDC deletes/destroys data. Negotiate 60&#8209;90 days with assisted export in agreed formats and secured S3/Blob handoff. <span class="dr-cite">(salesforce.com)</span></li>
+    <li><strong>EU Data Act switching/deletion with customer indemnity and early&#8209;termination fees:</strong> The EU terms introduce notice windows, transition timelines, non&#8209;liability for switching/deletion, and customer indemnity for impacted parties; termination still requires paying remaining subscription fees. Narrow customer indemnity, add SFDC co&#8209;liability for mishandled exports, and cap any termination fee. <span class="dr-cite">(salesforce.com)</span></li>
+  </ul>
+
+  <p><strong>Service Levels &amp; Performance Guarantees</strong></p>
+  <ul>
+    <li><strong>No hard uptime commitments in the MSA text; credits in separate documents (if at all):</strong> Core MSA uses warranty/disclaimer language rather than explicit SLAs/credits. Include an SLA exhibit with objective uptime/response targets, measurement rules, and escalating credits/termination rights for chronic failure. <span class="dr-cite">(salesforce.com)</span></li>
+    <li><strong>Interoperability changes for Non&#8209;SFDC apps:</strong> SFDC may cease interoperation features without refund/credit if third&#8209;party providers change availability. Add a remedy ladder for business&#8209;critical integrations. <span class="dr-cite">(salesforce.com)</span></li>
+  </ul>
+
+  <p><strong>Data Privacy &amp; Security</strong></p>
+  <ul>
+    <li><strong>DPA incorporated but operationally minimal in MSA; confidentiality scoped:</strong> The DPA is incorporated by link; confidentiality covers customer data, but free/beta carve&#8209;outs erode promises in test contexts. Align DPA with your regulatory posture (HIPAA/GLBA/etc.) and mandate breach notice SLAs and forensic cooperation. <span class="dr-cite">(salesforce.com)</span></li>
+  </ul>
+
+  <p><strong>Regulatory &amp; Compliance</strong></p>
+  <ul>
+    <li><strong>Export/anti&#8209;corruption; local&#8209;law overlays:</strong> MSA includes export controls and local&#8209;law variants (e.g., Italy/India) that alter payment/arbitration; ensure venue/governing law fit and flag divergent local payment terms. <span class="dr-cite">(salesforce.com)</span></li>
+    <li><strong>EU Data Act mechanics:</strong> Formal switching/deletion workflows with specific timelines and liabilities place operational burdens on the customer; require SFDC&#8209;assisted migration and co&#8209;accountability for data integrity and continuity. <span class="dr-cite">(salesforce.com)</span></li>
+  </ul>
+
+  <p><strong>Change Management &amp; Amendments</strong></p>
+  <ul>
+    <li><strong>Documentation&#8209;by&#8209;reference and policy changes:</strong> Numerous linked documents (Trust &amp; Compliance, Acceptable Use, Beta Terms) can change. Add a &#8220;no&#8209;material&#8209;detriment&#8221; clause and freeze critical docs at signature versions absent mutual consent. <span class="dr-cite">(salesforce.com)</span></li>
+  </ul>
+
+  <p><strong>Operational Execution &amp; Transition</strong></p>
+  <ul>
+    <li><strong>Notice routing by email and designated contacts:</strong> Non&#8209;legal notices by email are effective; misdirected notices can trigger acceleration/suspension. Add named distribution lists and bounce&#8209;handling obligations for vendor. <span class="dr-cite">(salesforce.com)</span></li>
+    <li><strong>Customer obligations for Non&#8209;SFDC apps and content removal:</strong> You must promptly remove content or disable apps that draw complaints; failure allows SFDC disabling services. Require cure/coordination windows and maintain business continuity plans. <span class="dr-cite">(salesforce.com)</span></li>
+  </ul>
+
+  <div class="dr-section-label">5 — Comparative Risk Matrix</div>
+  <p><em>Legend: &#10003; = provision present; H/M/L = assessed severity to you</em></p>
   <table class="dr-table">
-    <thead>
-      <tr><th>Rank</th><th>Risk</th><th>Vendor</th><th>Score</th><th>Negotiate To</th></tr>
-    </thead>
+    <thead><tr><th>Risk item</th><th>Microsoft MCA (ops/billing)</th><th>Salesforce MSA</th><th>2024 market norms</th></tr></thead>
     <tbody>
-      <tr>
-        <td style="font-weight:700;color:var(--dr-accent)">1</td>
-        <td><strong>Liability cap &amp; exclusions</strong><br><span style="font-size:11px;color:var(--ink-muted)">12-month cap; excludes consequential damages</span></td>
-        <td>Salesforce</td>
-        <td><span style="font-weight:700;color:var(--dr-accent)">80/125</span></td>
-        <td>2×–3× annual fees; super-cap carve-outs for data breach, regulatory fines, IP, willful misconduct</td>
-      </tr>
-      <tr>
-        <td style="font-weight:700;color:var(--dr-accent)">2</td>
-        <td><strong>Non-cancelable fees, auto-renewal &amp; early-termination payments</strong><br><span style="font-size:11px;color:var(--ink-muted)">Fees non-refundable; auto-renew on 30-day notice; volume decreases reset pricing to list</span></td>
-        <td>Salesforce</td>
-        <td><span style="font-weight:700;color:#f59e0b">60/125</span></td>
-        <td>90–120 day non-renewal notice; permit mid-term seat reductions for documented business change; price-protection cap at renewal (CPI+3%, max 5%)</td>
-      </tr>
-      <tr>
-        <td style="font-weight:700;color:var(--dr-accent)">3</td>
-        <td><strong>Data export window + EU Data Act non-liability</strong><br><span style="font-size:11px;color:var(--ink-muted)">30 days post-termination; customer indemnifies SFDC for switching/deletion</span></td>
-        <td>Salesforce</td>
-        <td><span style="font-weight:700;color:#f59e0b">60/125</span></td>
-        <td>60–90 days with vendor-assisted export; SFDC co-liability for data integrity during switching; remove customer indemnity for impacted parties absent customer fault</td>
-      </tr>
-      <tr>
-        <td style="font-weight:700;color:var(--ink-muted)">4</td>
-        <td><strong>EA-to-MCA transition impact</strong><br><span style="font-size:11px;color:var(--ink-muted)">Billing responsibility transfers; historical cost/usage may become inaccessible; API endpoints change</span></td>
-        <td>Microsoft</td>
-        <td><span style="font-weight:700;color:#f59e0b">48/125</span></td>
-        <td>Vendor-supported transition plan: sandbox testing, API/ETL rewrites, historical data export, parity validation, rollback steps</td>
-      </tr>
-      <tr>
-        <td style="font-weight:700;color:var(--ink-muted)">5</td>
-        <td><strong>Wire-transfer defaults &amp; role-dependent notices</strong><br><span style="font-size:11px;color:var(--ink-muted)">Wire default for rep-sold accounts; card capped at $50K; billing roles control invoice delivery</span></td>
-        <td>Microsoft</td>
-        <td><span style="font-weight:700;color:#64748b">36/125</span></td>
-        <td>Dual-channel notices; 10-business-day no-suspension cure upon bank wire proof; confirmed backup notification recipients</td>
-      </tr>
-      <tr>
-        <td style="font-weight:700;color:var(--ink-muted)">6</td>
-        <td><strong>Indemnity asymmetry</strong><br><span style="font-size:11px;color:var(--ink-muted)">SFDC controls defense and settlement; customer indemnifies for non-SFDC apps, unlawful use, and data claims</span></td>
-        <td>Salesforce</td>
-        <td><span style="font-weight:700;color:#64748b">36/125</span></td>
-        <td>Narrow customer indemnity to claims "to the extent caused by" customer's intentional misconduct; exclude configurations performed per vendor documentation</td>
-      </tr>
-      <tr>
-        <td style="font-weight:700;color:var(--ink-muted)">7</td>
-        <td><strong>Lack of explicit SLAs</strong><br><span style="font-size:11px;color:var(--ink-muted)">Core MSA commits only to "commercially reasonable efforts"; credits exist in separate documents if at all</span></td>
-        <td>Salesforce</td>
-        <td><span style="font-weight:700;color:#64748b">27/125</span></td>
-        <td>SLA exhibit with 99.9% monthly uptime target; measurement rules; escalating credits up to 25% monthly fees; termination right for chronic failure</td>
-      </tr>
+      <tr><td>Liability cap to 12 months&#8217; fees; exclude indirects</td><td>Unclear in supplied MCA docs (gap)</td><td>&#10003; (H): 12&#8209;month cap; excludes consequential damages</td><td>Common but negotiated: raise cap; carve&#8209;outs</td></tr>
+      <tr><td>Free/beta &#8220;as&#8209;is,&#8221; no indemnity/low cap</td><td>N/A in docs provided</td><td>&#10003; (H): free/beta disclaimed; small cap</td><td>Present; customers negotiate guardrails</td></tr>
+      <tr><td>Non&#8209;cancelable/non&#8209;refundable fees</td><td>N/A in docs provided</td><td>&#10003; (H): non&#8209;cancelable, non&#8209;refundable; no mid&#8209;term downsizes</td><td>Common but softened via carve&#8209;outs</td></tr>
+      <tr><td>Auto&#8209;renewal with short notice window</td><td>N/A in docs provided</td><td>&#10003; (M&#8209;H): 30&#8209;day email notice; repricing on decrease</td><td>Typical; push 90&#8209;120 days</td></tr>
+      <tr><td>Overdue interest/acceleration/suspension</td><td>&#10003; (M): wire delays, role notices risk late fees</td><td>&#10003; (M): 1.5%/mo; acceleration; suspension</td><td>Typical; cure/notice buffers negotiated</td></tr>
+      <tr><td>IP indemnity (vendor) with carve&#8209;outs</td><td>N/A in docs provided</td><td>&#10003; (M): mod/license/terminate remedy set</td><td>Common; customers expand scope</td></tr>
+      <tr><td>Customer indemnity for data/config/non&#8209;vendor apps</td><td>N/A in docs provided</td><td>&#10003; (M&#8209;H): broad</td><td>Common; narrow to fault&#8209;based</td></tr>
+      <tr><td>Data export/deletion windows</td><td>&#10003; (M): ops&#8209;side only</td><td>&#10003; (H): 30&#8209;day export; delete after</td><td>Widely present; negotiate longer windows</td></tr>
+      <tr><td>EU Data Act switching/deletion</td><td>N/A</td><td>&#10003; (H): customer indemnity; vendor non&#8209;liability; early&#8209;term fees</td><td>Emerging; active negotiation area</td></tr>
+      <tr><td>SLA/credits</td><td>N/A in billing docs</td><td>&#10003; (L&#8209;M): no hard SLA in MSA; separate docs</td><td>Negotiate explicit SLA exhibits</td></tr>
+      <tr><td>Interop change rights</td><td>N/A</td><td>&#10003; (M): SFDC may cease features</td><td>Common; add remedy ladder</td></tr>
+      <tr><td>Billing method limits/thresholds</td><td>&#10003; (M): wire default; card thresholds</td><td>&#10003; (M): invoicing rules, late fees</td><td>Typical; add ACH/fallbacks</td></tr>
+      <tr><td>EA&#8209;to&#8209;MCA transition/API/reporting change</td><td>&#10003; (H): rework + historical scope issue</td><td>N/A</td><td>Not universal; plan&#8209;heavy risk</td></tr>
+      <tr><td>Notice mechanics/email efficacy</td><td>&#10003; (M): roles/AP contacts sensitive</td><td>&#10003; (M): email effective; AP contacts</td><td>Typical; require robust routing</td></tr>
     </tbody>
   </table>
 
-  <div class="dr-section-label">Key Contract Clauses — Verbatim Language</div>
-  <p>Source clauses requiring direct redlines. Reference these in markup against each vendor agreement.</p>
+  <div class="dr-section-label">6 — Risk Prioritization Framework</div>
+  <p>Scoring (1&#8209;5 scale; higher = worse). Total score = Exposure magnitude &#215; Likelihood &#215; Mitigation difficulty.</p>
   <table class="dr-table">
-    <thead>
-      <tr><th>Ref</th><th>Source</th><th>Clause Text</th><th>Risk</th></tr>
-    </thead>
+    <thead><tr><th>Rank</th><th>Risk</th><th>Exposure</th><th>Likelihood</th><th>Mitigation difficulty</th><th>Total</th></tr></thead>
     <tbody>
-      <tr>
-        <td style="white-space:nowrap;font-weight:600;color:var(--dr-accent)">SF-1</td>
-        <td style="white-space:nowrap;font-size:11px">MSA §5.1</td>
-        <td style="font-style:italic;font-size:12px">"payment obligations are non-cancelable and fees paid are non-refundable, and quantities purchased cannot be decreased during the relevant subscription term."</td>
-        <td style="font-size:11px">Non-cancelable commitment; no mid-term relief</td>
-      </tr>
-      <tr>
-        <td style="white-space:nowrap;font-weight:600;color:var(--dr-accent)">SF-2</td>
-        <td style="white-space:nowrap;font-size:11px">MSA §10.1</td>
-        <td style="font-style:italic;font-size:12px">"AGGREGATE LIABILITY… EXCEED THE TOTAL AMOUNT PAID… IN THE TWELVE MONTHS PRECEDING THE FIRST INCIDENT…"</td>
-        <td style="font-size:11px">Cap = 12 months' fees; consequential damages excluded</td>
-      </tr>
-      <tr>
-        <td style="white-space:nowrap;font-weight:600;color:var(--dr-accent)">SF-3</td>
-        <td style="white-space:nowrap;font-size:11px">MSA §2.2</td>
-        <td style="font-style:italic;font-size:12px">"Upon request… within 30 days… [SFDC] will make Customer Data available… After such 30-day period… delete or destroy all copies…"</td>
-        <td style="font-size:11px">30-day data export window; then deletion with no liability</td>
-      </tr>
-      <tr>
-        <td style="white-space:nowrap;font-weight:600;color:var(--dr-accent)">SF-4</td>
-        <td style="white-space:nowrap;font-size:11px">MSA §11.2</td>
-        <td style="font-style:italic;font-size:12px">"subscriptions will automatically renew… unless either party gives… written notice (email acceptable) at least 30 days before the end…"</td>
-        <td style="font-size:11px">Auto-renew on 30-day notice; short window to act</td>
-      </tr>
-      <tr>
-        <td style="white-space:nowrap;font-weight:600;color:var(--dr-accent)">SF-5</td>
-        <td style="white-space:nowrap;font-size:11px">MSA §12.18<br>(EU Data Act)</td>
-        <td style="font-style:italic;font-size:12px">"Customer will… indemnify SFDC… [and] SFDC shall not be liable for any damages… arising out of… Switching and/or Deletion Request…"</td>
-        <td style="font-size:11px">Customer bears all liability for data switching/deletion</td>
-      </tr>
-      <tr>
-        <td style="white-space:nowrap;font-weight:600;color:#2563eb">MS-1</td>
-        <td style="white-space:nowrap;font-size:11px">MCA Billing Docs</td>
-        <td style="font-style:italic;font-size:12px">"If you signed up through a Microsoft representative, your default payment method is always set to wire transfer… [card limited to $50,000 USD]."</td>
-        <td style="font-size:11px">Wire-only default; card capped at $50K — operational risk if bank wire delays</td>
-      </tr>
-      <tr>
-        <td style="white-space:nowrap;font-weight:600;color:#2563eb">MS-2</td>
-        <td style="white-space:nowrap;font-size:11px">MCA Billing Docs</td>
-        <td style="font-style:italic;font-size:12px">"After you switch to payment by wire transfer, you can't switch back to a credit card as recurring form of payment."</td>
-        <td style="font-size:11px">One-way payment lock; no reversion to card after wire switch</td>
-      </tr>
+      <tr><td style="font-weight:700;color:var(--dr-accent)">1</td><td>Salesforce liability cap and exclusions</td><td>5</td><td>4</td><td>4</td><td style="font-weight:700;color:var(--dr-accent)">80</td></tr>
+      <tr><td style="font-weight:700;color:var(--dr-accent)">2</td><td>Non&#8209;cancelable fees/auto&#8209;renewal/early&#8209;term payments (Salesforce)</td><td>5</td><td>4</td><td>3</td><td style="font-weight:700;color:#f59e0b">60</td></tr>
+      <tr><td style="font-weight:700;color:var(--dr-accent)">3</td><td>Data export 30&#8209;days + EU Data Act non&#8209;liability/indemnity (Salesforce)</td><td>5</td><td>3</td><td>4</td><td style="font-weight:700;color:#f59e0b">60</td></tr>
+      <tr><td>4</td><td>EA&#8209;to&#8209;MCA transition impact on billing scopes/APIs/reporting (Microsoft)</td><td>4</td><td>4</td><td>3</td><td style="font-weight:700;color:#f59e0b">48</td></tr>
+      <tr><td>5</td><td>Wire&#8209;transfer defaults, card thresholds, and notice routing (Microsoft)</td><td>4</td><td>3</td><td>3</td><td>36</td></tr>
+      <tr><td>6</td><td>Indemnity asymmetry (Salesforce)</td><td>4</td><td>3</td><td>3</td><td>36</td></tr>
+      <tr><td>7</td><td>Interop change rights for Non&#8209;SFDC apps (Salesforce)</td><td>3</td><td>3</td><td>3</td><td>27</td></tr>
+      <tr><td>8</td><td>Lack of explicit SLA/credits (Salesforce core text)</td><td>3</td><td>3</td><td>3</td><td>27</td></tr>
+      <tr><td>9</td><td>Role elevation/RBAC gaps in MCA billing (Microsoft)</td><td>3</td><td>3</td><td>2</td><td>18</td></tr>
+      <tr><td>10</td><td>Local&#8209;law overlays and venue/arbitration shifts (Salesforce)</td><td>3</td><td>2</td><td>2</td><td>12</td></tr>
+    </tbody>
+  </table>
+  <p><strong>Key takeaways:</strong></p>
+  <ul>
+    <li>Salesforce&#8217;s financial allocation and exit structure dominate near&#8209;term risk and require direct redlines.</li>
+    <li>Microsoft&#8217;s MCA poses acute operational risks during and after transition; address with process, roles, and vendor&#8209;assisted migration commitments.</li>
+  </ul>
+
+  <div class="dr-section-label">7 — Recommendations and Next Steps</div>
+  <p><strong>High&#8209;Priority Redlines and Alternatives</strong></p>
+  <ul>
+    <li><strong>Liability cap and carve&#8209;outs (Salesforce):</strong> Request: cap = 2x&#8209;3x total fees paid or payable in the 12 months before the breach for all claims in aggregate, with carve&#8209;outs for IP infringement, data breach/privacy violations, gross negligence/willful misconduct, confidentiality breach, and violation of law (no cap). If vendor refuses a global uplift, create super&#8209;cap buckets for privacy/IP.
+      <br><em>Sample language:</em> Notwithstanding anything to the contrary, the aggregate liability cap shall be two (2) times the total Subscription Fees paid or payable in the twelve (12) months preceding the first event giving rise to liability. The foregoing cap shall not apply to claims arising from (a) breach of confidentiality, (b) data breach or violation of data protection laws, (c) IP infringement indemnity, or (d) gross negligence or willful misconduct.</li>
+    <li><strong>Non&#8209;cancelable fees and auto&#8209;renewal (Salesforce):</strong> Add: 90&#8209;120 day non&#8209;renewal notice; permit mid&#8209;term seat reductions upon documented business change; price&#8209;protection cap at renewal (e.g., CPI+3%, max 5%). Tie early&#8209;termination fee relief to vendor breach/chronic SLA failure.</li>
+    <li><strong>EU Data Act and data&#8209;exit mechanics (Salesforce):</strong> Add: vendor&#8209;assisted export at no extra charge; minimum 60&#8209;90 days export window; migration support tools/scripts; vendor co&#8209;liability for data integrity during switching and deletion; remove customer indemnity for &#8220;impacted parties&#8221; absent customer fault. <span class="dr-cite">(salesforce.com)</span></li>
+    <li><strong>SLA exhibit (Salesforce):</strong> Include uptime (e.g., 99.9% monthly), response/restore targets, transparent measurement, and credits up to 25% monthly fees with termination right for chronic failure (e.g., &lt;99.5% in two of three months). Link non&#8209;performance to fee relief and optional early exit.</li>
+    <li><strong>Billing safeguards (Microsoft MCA):</strong> Require Microsoft to:
+      <ul>
+        <li>Accept emergency ACH/card payments above threshold during bank delays;</li>
+        <li>Provide dual&#8209;channel notices (portal + email) to named distribution lists;</li>
+        <li>Allow a 10&#8209;business&#8209;day no&#8209;suspension cure upon bank wire proof; and</li>
+        <li>Confirm AP contacts and backup recipients quarterly. <span class="dr-cite">(learn.microsoft.com)</span></li>
+      </ul>
+    </li>
+    <li><strong>EA&#8209;to&#8209;MCA transition protections (Microsoft):</strong> Append a vendor&#8209;supported transition plan: sandbox testing, API/ETL rewrites, historical data export, parity validation, and rollback/contingency steps. Secure Microsoft resourcing SLAs for migration assistance and confirm marketplace/savings&#8209;plan continuity. <span class="dr-cite">(learn.microsoft.com)</span></li>
+    <li><strong>Indemnity narrowing (Salesforce customer indemnity):</strong> Limit to third&#8209;party claims &#8220;to the extent caused by&#8221; customer&#8217;s unlawful use or intentional misconduct; exclude configurations performed per vendor documentation or SI guidance; cap defense costs to reasonable/actually incurred amounts.</li>
+    <li><strong>Interop change remedies (Salesforce):</strong> Add a remedy ladder for withdrawn integrations critical to your use case: notice &#8594; workaround &#8594; fee credits &#8594; right to downgrade/terminate affected modules without penalty if materially degraded for 30+ days. <span class="dr-cite">(salesforce.com)</span></li>
+  </ul>
+
+  <p><strong>Stakeholder Engagement Plan</strong></p>
+  <ul>
+    <li><strong>Legal:</strong> lead on liability/indemnities, termination, governing law/venue, EU Data Act terms.</li>
+    <li><strong>Finance/Procurement:</strong> drive renewal/price&#8209;cap mechanics, non&#8209;cancelable relief, invoice/notice workflows, AP contacts.</li>
+    <li><strong>IT/Security:</strong> validate DPA, breach SLAs, RBAC/SoD for MCA billing, data&#8209;exit formats, and migration tests.</li>
+    <li><strong>Architecture/Engineering:</strong> own API/reporting changes under MCA, interop dependencies under MSA, SLA instrumentation.</li>
+  </ul>
+
+  <p><strong>Fallback Positions</strong></p>
+  <ul>
+    <li>If vendor resists cap uplift: introduce super&#8209;caps for specific harms (privacy/IP) and raise the base cap to at least 1x 24&#8209;month fees for core services.</li>
+    <li>If downsizing mid&#8209;term is denied: secure flexible partial &#8220;parking&#8221; licenses or future credit for unused capacity.</li>
+    <li>If SLA credits are limited: link chronic failure to early termination without fee penalties.</li>
+  </ul>
+
+  <div class="dr-section-label">8 — Appendices</div>
+  <p><strong>Appendix A &#8212; Full List of Identified Risks by Category</strong></p>
+  <p><em>Microsoft MCA (ops/billing)</em></p>
+  <ul>
+    <li><strong>Liability &amp; Indemnification:</strong> Contractual clarity gap on caps/exclusions; free/beta not addressed; add explicit guardrails.</li>
+    <li><strong>Pricing &amp; Payment:</strong> Wire default for representative&#8209;sold accounts; one&#8209;time card threshold; wire posting delays; partial&#8209;payment minimums; role&#8209;dependent invoice/statement delivery; ACH/card emergency fallback absent. <span class="dr-cite">(learn.microsoft.com)</span></li>
+    <li><strong>Termination &amp; Exit:</strong> Downsize/cancellation terms not surfaced in docs; require convenience exit or fee relief for chronic failure.</li>
+    <li><strong>Service Levels:</strong> No billing&#8209;ops SLA; require portal availability and invoice&#8209;timeliness SLAs with credits.</li>
+    <li><strong>Data Privacy &amp; Security:</strong> RBAC elevation/guest risks; institute least&#8209;privilege and dual&#8209;control. <span class="dr-cite">(learn.microsoft.com)</span></li>
+    <li><strong>Regulatory &amp; Compliance:</strong> Entity/currency/tax changes; ensure cooperation on tax certificates and filings.</li>
+    <li><strong>Change &amp; Amendments:</strong> EA&#8209;to&#8209;MCA scope and pricing constructs differ; freeze adverse changes during transition. <span class="dr-cite">(learn.microsoft.com)</span></li>
+    <li><strong>Operational Execution:</strong> Billing&#8209;only transfers; historical cost visibility gaps; marketplace/savings&#8209;plan nuances; require assisted migration. <span class="dr-cite">(learn.microsoft.com)</span></li>
+  </ul>
+  <p><em>Salesforce MSA</em></p>
+  <ul>
+    <li><strong>Liability &amp; Indemnification:</strong> 12&#8209;month cap; exclude indirects; asymmetric indemnities; free/beta disclaimers and micro&#8209;caps. <span class="dr-cite">(salesforce.com)</span></li>
+    <li><strong>Pricing &amp; Payment:</strong> Non&#8209;cancelable, non&#8209;refundable; no mid&#8209;term decreases; interest/acceleration/suspension; auto&#8209;renew 30&#8209;day notice; repricing on volume decrease. <span class="dr-cite">(salesforce.com)</span></li>
+    <li><strong>Termination &amp; Exit:</strong> Refund/payment asymmetry; 30&#8209;day data export then deletion; EU Data Act switching/deletion: customer indemnity, vendor non&#8209;liability, early&#8209;term fees. <span class="dr-cite">(salesforce.com)</span></li>
+    <li><strong>Service Levels:</strong> &#8220;Commercially reasonable efforts&#8221; baseline; separate or negotiated SLA credits; interop change rights. <span class="dr-cite">(salesforce.com)</span></li>
+    <li><strong>Data Privacy &amp; Security:</strong> DPA incorporated by link; confidentiality protections; ensure breach SLAs and cross&#8209;border mechanisms. <span class="dr-cite">(salesforce.com)</span></li>
+    <li><strong>Regulatory &amp; Compliance:</strong> Export/anti&#8209;corruption and local&#8209;law variants (Italy/India/UK). <span class="dr-cite">(salesforce.com)</span></li>
+    <li><strong>Change &amp; Amendments:</strong> Linked docs and policies may change; require no&#8209;material&#8209;detriment and freeze key versions. <span class="dr-cite">(salesforce.com)</span></li>
+    <li><strong>Operational Execution:</strong> Email&#8209;based notice mechanics; content/app removal duties under threat of disablement&#8212;add cure windows and continuity plans. <span class="dr-cite">(salesforce.com)</span></li>
+  </ul>
+
+  <p><strong>Appendix B &#8212; Glossary of Key Terms</strong></p>
+  <ul>
+    <li><strong>Aggregate liability cap:</strong> The maximum total monetary exposure a party accepts under the agreement, usually tied to recent fees.</li>
+    <li><strong>Carve&#8209;out:</strong> A category of claims excluded from the liability cap.</li>
+    <li><strong>Early&#8209;termination fee:</strong> The amount owed if terminating before the end of a committed term.</li>
+    <li><strong>Interoperability:</strong> The ability of the service to integrate and function with third&#8209;party applications.</li>
+    <li><strong>RBAC:</strong> Role&#8209;based access control for permissions and entitlements.</li>
+    <li><strong>SLA:</strong> Service level agreement specifying performance targets and remedies.</li>
+    <li><strong>Switching/Deletion (EU Data Act):</strong> Customer rights and workflows to migrate or delete data, including prescribed timelines and responsibilities.</li>
+  </ul>
+
+  <p><strong>Appendix C &#8212; Source Excerpt Table (representative quotes)</strong></p>
+  <table class="dr-table">
+    <thead><tr><th>ID</th><th>Contract</th><th>Section</th><th>Quoted language</th></tr></thead>
+    <tbody>
+      <tr><td style="font-weight:700;color:var(--dr-accent);white-space:nowrap">SF&#8209;1</td><td>Salesforce MSA</td><td>&#167;5.1 Fees</td><td style="font-style:italic">&#8220;payment obligations are non&#8209;cancelable and fees paid are non&#8209;refundable, and quantities purchased cannot be decreased during the relevant subscription term.&#8221; <span class="dr-cite">(salesforce.com)</span></td></tr>
+      <tr><td style="font-weight:700;color:var(--dr-accent);white-space:nowrap">SF&#8209;2</td><td>Salesforce MSA</td><td>&#167;10.1 Liability cap</td><td style="font-style:italic">&#8220;AGGREGATE LIABILITY&#8230; EXCEED THE TOTAL AMOUNT PAID&#8230; IN THE TWELVE MONTHS PRECEDING THE FIRST INCIDENT&#8230;&#8221; <span class="dr-cite">(salesforce.com)</span></td></tr>
+      <tr><td style="font-weight:700;color:var(--dr-accent);white-space:nowrap">SF&#8209;3</td><td>Salesforce MSA</td><td>&#167;10.2 Damages</td><td style="font-style:italic">&#8220;IN NO EVENT WILL EITHER PARTY&#8230; ANY LIABILITY&#8230; FOR ANY LOST PROFITS, REVENUES, GOODWILL, OR INDIRECT, SPECIAL, INCIDENTAL, CONSEQUENTIAL&#8230;&#8221; <span class="dr-cite">(salesforce.com)</span></td></tr>
+      <tr><td style="font-weight:700;color:var(--dr-accent);white-space:nowrap">SF&#8209;4</td><td>Salesforce MSA</td><td>&#167;11.2 Term/Renewal</td><td style="font-style:italic">&#8220;subscriptions will automatically renew&#8230; unless either party gives&#8230; written notice (email acceptable) at least 30 days before the end&#8230;&#8221; <span class="dr-cite">(salesforce.com)</span></td></tr>
+      <tr><td style="font-weight:700;color:var(--dr-accent);white-space:nowrap">SF&#8209;5</td><td>Salesforce MSA</td><td>&#167;11.4 Termination payments</td><td style="font-style:italic">&#8220;If this Agreement is terminated by SFDC&#8230; Customer will pay any unpaid fees covering the remainder of the term&#8230;&#8221; <span class="dr-cite">(salesforce.com)</span></td></tr>
+      <tr><td style="font-weight:700;color:var(--dr-accent);white-space:nowrap">SF&#8209;6</td><td>Salesforce MSA</td><td>&#167;2.2 Data export/deletion</td><td style="font-style:italic">&#8220;Upon request&#8230; within 30 days&#8230; [SFDC] will make Customer Data available&#8230; After such 30&#8209;day period&#8230; delete or destroy all copies&#8230;&#8221; <span class="dr-cite">(salesforce.com)</span></td></tr>
+      <tr><td style="font-weight:700;color:var(--dr-accent);white-space:nowrap">SF&#8209;7</td><td>Salesforce MSA</td><td>&#167;2.5&#8209;2.6 Free/Trial</td><td style="font-style:italic">&#8220;DURING THE FREE TRIAL THE SERVICES ARE PROVIDED &#8216;AS&#8209;IS&#8217;&#8230; [and] SFDC SHALL HAVE NO INDEMNIFICATION OBLIGATIONS&#8230; [liability shall not exceed $1,000.00].&#8221; <span class="dr-cite">(salesforce.com)</span></td></tr>
+      <tr><td style="font-weight:700;color:var(--dr-accent);white-space:nowrap">SF&#8209;8</td><td>Salesforce MSA</td><td>&#167;9.1 Vendor indemnity</td><td style="font-style:italic">&#8220;SFDC may&#8230; (i) modify&#8230; (ii) obtain a license&#8230; or (iii) terminate&#8230; and refund&#8230; prepaid fees&#8230;&#8221; <span class="dr-cite">(salesforce.com)</span></td></tr>
+      <tr><td style="font-weight:700;color:var(--dr-accent);white-space:nowrap">SF&#8209;9</td><td>Salesforce MSA</td><td>&#167;9.2 Customer indemnity</td><td style="font-style:italic">&#8220;Customer will defend SFDC&#8230; arising from&#8230; Non&#8209;SFDC Application&#8230; unlawful use&#8230; Customer Data&#8230;&#8221; <span class="dr-cite">(salesforce.com)</span></td></tr>
+      <tr><td style="font-weight:700;color:var(--dr-accent);white-space:nowrap">SF&#8209;10</td><td>Salesforce MSA</td><td>&#167;5.3/5.4 Overdue</td><td style="font-style:italic">&#8220;1.5%&#8230; per month&#8230; [and] suspend Services&#8230; accelerate&#8230; unpaid fee obligations&#8230;&#8221; <span class="dr-cite">(salesforce.com)</span></td></tr>
+      <tr><td style="font-weight:700;color:var(--dr-accent);white-space:nowrap">SF&#8209;11</td><td>Salesforce MSA</td><td>&#167;12.10 Notices</td><td style="font-style:italic">&#8220;all notices&#8230; will be in writing and will be effective upon&#8230; email [except Legal Notices]&#8230; Billing&#8209;related notices&#8230; to&#8230; billing contact.&#8221; <span class="dr-cite">(salesforce.com)</span></td></tr>
+      <tr><td style="font-weight:700;color:var(--dr-accent);white-space:nowrap">SF&#8209;12</td><td>Salesforce MSA</td><td>&#167;12.18 EU Data Act</td><td style="font-style:italic">&#8220;Customer will&#8230; indemnify SFDC&#8230; [and] SFDC shall not be liable for any damages&#8230; arising out of&#8230; Switching and/or Deletion Request&#8230; Customer must pay any outstanding subscription fees&#8230; as an early termination fee.&#8221; <span class="dr-cite">(salesforce.com)</span></td></tr>
+      <tr><td style="font-weight:700;color:#2563eb;white-space:nowrap">MS&#8209;1</td><td>Microsoft MCA docs</td><td>Pay bill</td><td style="font-style:italic">&#8220;If you signed up&#8230; through a Microsoft representative, your default payment method is always set to wire transfer&#8230; [card] &#10003; (with a $50,000 USD limit).&#8221; <span class="dr-cite">(learn.microsoft.com)</span></td></tr>
+      <tr><td style="font-weight:700;color:#2563eb;white-space:nowrap">MS&#8209;2</td><td>Microsoft MCA docs</td><td>Pay by invoice</td><td style="font-style:italic">&#8220;After you switch to payment by wire transfer, you can&#8217;t switch back to a credit card [as recurring form of payment].&#8221; <span class="dr-cite">(learn.microsoft.com)</span></td></tr>
+      <tr><td style="font-weight:700;color:#2563eb;white-space:nowrap">MS&#8209;3</td><td>Microsoft MCA docs</td><td>Invoices by email</td><td style="font-style:italic">&#8220;AP contact&#8230; will receive&#8230; invoice&#8230; statements and payment inquiries&#8230; [roles] will not receive statements and payment reminders.&#8221; <span class="dr-cite">(learn.microsoft.com)</span></td></tr>
+      <tr><td style="font-weight:700;color:#2563eb;white-space:nowrap">MS&#8209;4</td><td>Microsoft MCA docs</td><td>Roles</td><td style="font-style:italic">&#8220;Billing roles&#8230; Invoice manager: View and pay invoices for billing profile.&#8221; (role&#8209;based permissions excerpt) <span class="dr-cite">(learn.microsoft.com)</span></td></tr>
+      <tr><td style="font-weight:700;color:#2563eb;white-space:nowrap">MS&#8209;5</td><td>Microsoft MCA docs</td><td>EA&#8209;to&#8209;MCA transfer</td><td style="font-style:italic">&#8220;The transition moves only the billing responsibility&#8230; the transition doesn&#8217;t interrupt your Azure services&#8230; [download] cost and usage data before you transfer subscriptions.&#8221; <span class="dr-cite">(learn.microsoft.com)</span></td></tr>
+      <tr><td style="font-weight:700;color:#2563eb;white-space:nowrap">MS&#8209;6</td><td>Microsoft MCA docs</td><td>API migration</td><td style="font-style:italic">&#8220;This article helps you understand the&#8230; differences between EA and MCA&#8230; If you use any existing EA APIs, you need to update them to support MCA billing accounts.&#8221; <span class="dr-cite">(learn.microsoft.com)</span></td></tr>
     </tbody>
   </table>
 
-  <div class="dr-section-label">Recommended Next Steps by Stakeholder</div>
-  <table class="dr-table">
-    <thead>
-      <tr><th>Owner</th><th>Priority Actions</th></tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td style="white-space:nowrap;font-weight:600">Legal</td>
-        <td>Lead on liability/indemnities, termination, governing law, EU Data Act terms. Draft redlines for SF-1 through SF-5 before counter-party markup.</td>
-      </tr>
-      <tr>
-        <td style="white-space:nowrap;font-weight:600">Finance / Procurement</td>
-        <td>Drive renewal/price-cap mechanics, non-cancelable relief, invoice/notice workflows. Model EPS impact of liability cap scenarios against Adobe's exposure profile.</td>
-      </tr>
-      <tr>
-        <td style="white-space:nowrap;font-weight:600">IT / Security</td>
-        <td>Validate DPA, breach SLAs, data-exit formats and migration tests. Run one test export before go-live. Confirm 48-hour incident notification SLA is contractually binding.</td>
-      </tr>
-      <tr>
-        <td style="white-space:nowrap;font-weight:600">Architecture / Engineering</td>
-        <td>Own API/reporting changes under MCA, interop dependencies under MSA. Require vendor-supported sandbox testing and parity validation before EA-to-MCA cutover.</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <div class="dr-callout" style="margin-top:16px; background:#ecfdf5;">
+<div class="dr-callout" style="margin-top:16px; background:#ecfdf5;">
     <strong>Bottom Line</strong>
     The core contractual risk is financial asymmetry under the Salesforce MSA — tight liability caps, broad exclusions, and non-cancelable fees that persist through auto-renewal — compounded by short, vendor-favorable data-exit terms and EU Data Act obligations that shift operational and legal risk to the customer. The primary operational risk under Microsoft's MCA is payment method constraints, role-dependent notices, and EA-to-MCA reporting/API changes that create real disruption absent a well-managed cutover. Prioritize liability carve-outs, renewal flexibility, explicit SLAs, data-return co-liability, and robust billing safeguards.
   </div>
@@ -2885,6 +3038,7 @@
 
 </body>
 </html>
+
 
 
 
